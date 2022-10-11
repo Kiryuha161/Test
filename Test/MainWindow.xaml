@@ -1,0 +1,127 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test"
+        xmlns:Properties="clr-namespace:Test.Properties" x:Class="Test.MainWindow"
+        mc:Ignorable="d"
+        Title="Таблица зарплаты охотников" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="54*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="182*"/>
+            <ColumnDefinition Width="287*"/>
+            <ColumnDefinition Width="331*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ранг" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="Знак классности" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" Text="Стажевый ранг" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" Text="Ученая степень" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="5" TextWrapping="Wrap" Text="Научное звание" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="6" TextWrapping="Wrap" Text="Должность" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="7" TextWrapping="Wrap" Text="Специализации" VerticalAlignment="Top" FontSize="16" Margin="0,6,0,0" Grid.RowSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Теоретическая подготовленность" VerticalAlignment="Center" FontSize="15"/>
+        <ComboBox x:Name="rangeChange" Grid.Column="1" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" Width="242" FontSize="15" SelectionChanged="rangeChange_SelectionChanged" Text="">
+            <ListBoxItem x:Name="listBoxItem1" Content="Младший охотник" InputScope="Default"/>
+            <ListBoxItem x:Name="listBoxItem2" Content="Охотник"/>
+            <ListBoxItem x:Name="listBoxItem3" Content="Старший охотник"/>
+            <ListBoxItem x:Name="listBoxItem4" Content="Охотник высшей категории"/>
+            <ListBoxItem Content="Нет"/>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="73,0,0,0" Grid.Row="8" TextWrapping="Wrap" Text="Оклад" VerticalAlignment="Center" FontSize="18"/>
+        <ComboBox x:Name="theoryChange" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="242" FontSize="15" SelectionChanged="theoryChange_SelectionChanged">
+            <ListBoxItem Content="1 ступень (абитуриент)" FontSize="12"/>
+            <ListBoxItem Content="2 ступень (бакалавр)" FontSize="12"/>
+            <ListBoxItem Content="3 ступень (магистр)" FontSize="12"/>
+            <ListBoxItem Content="4 ступень (аспирант)" FontSize="12"/>
+            <ListBoxItem Content="5 ступень (профессионал)" FontSize="12"/>
+            <ListBoxItem Content="Нет"/>
+        </ComboBox>
+        <ComboBox x:Name="classChange" Grid.Column="1" HorizontalAlignment="Center" Margin="0,16,0,0" Grid.Row="2" VerticalAlignment="Top" Width="242" FontSize="15" SelectionChanged="classChange_SelectionChanged">
+            <ListBoxItem Content="Новичок"/>
+            <ListBoxItem Content="Подмастерье"/>
+            <ListBoxItem Content="Эксперт"/>
+            <ListBoxItem Content="Мастер"/>
+            <ListBoxItem Content="Грандмастер"/>
+            <ListBoxItem Content="Нет"/>
+        </ComboBox>
+        <ComboBox x:Name="stageChange" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="242" FontSize="15" SelectionChanged="stageChange_SelectionChanged">
+            <ListBoxItem Content="Отличный охотник"/>
+            <ListBoxItem Content="Ветеран"/>
+            <ListBoxItem Content="Охотник международного класса"/>
+            <ListBoxItem Content="Легендарный охотник"/>
+            <ListBoxItem Content="Нет"/>
+        </ComboBox>
+        <ComboBox x:Name="scienceRateChange" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="242" FontSize="15" SelectionChanged="scienceRate_SelectionChanged">
+            <ListBoxItem Content="Первая кандидатская"/>
+            <ListBoxItem Content="Первая докторская"/>
+            <ListBoxItem Content="Вторая кандидатская"/>
+            <ListBoxItem Content="Вторая докторская"/>
+            <ListBoxItem Content="Третья кандидатская"/>
+            <ListBoxItem Content="Третья докторская"/>
+            <ListBoxItem Content="Четвертая кандидатская"/>
+            <ListBoxItem Content="Четвёртая докторская"/>
+            <ListBoxItem Content="Пятая кандидатская"/>
+            <ListBoxItem Content="Пятая докторская"/>
+            <ListBoxItem Content="Нет"/>
+        </ComboBox>
+        <ComboBox x:Name="scienceRankChange" Grid.Column="1" HorizontalAlignment="Center" Margin="0,8,0,0" Grid.Row="5" VerticalAlignment="Top" Width="242" FontSize="15" SelectionChanged="scienceRankChange_SelectionChanged">
+            <ListBoxItem Content="Доцент"/>
+            <ListBoxItem Content="Профессор"/>
+            <ListBoxItem Content="Академик"/>
+            <ListBoxItem Content="Нет"/>
+        </ComboBox>
+        <ComboBox x:Name="positionChange" Grid.Column="1" HorizontalAlignment="Center" Margin="0,9,0,0" Grid.Row="6" VerticalAlignment="Top" Width="242" FontSize="15" SelectionChanged="positionChange_SelectionChanged">
+            <ListBoxItem Content="Следователь"/>
+            <ListBoxItem Content="Военный охотник"/>
+            <ListBoxItem Content="Хранитель"/>
+            <ListBoxItem Content="Травник"/>
+            <ListBoxItem Content="Инженер"/>
+            <ListBoxItem Content="Медик"/>
+            <ListBoxItem Content="Биолог"/>
+            <ListBoxItem Content="Искатель"/>
+            <ListBoxItem Content="Маг"/>
+        </ComboBox>
+        <ComboBox x:Name="specializationChange" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Width="242" FontSize="15" SelectionChanged="specializationChange_SelectionChanged">
+            <ListBoxItem Content="Без специализации"/>
+            <ListBoxItem Content="1 базовая специализация"/>
+            <ListBoxItem Content="2 базовые специализации"/>
+            <ListBoxItem Content="3 базовые специализации"/>
+            <ListBoxItem Content="1 продвинутая и 2 базовые "/>
+            <ListBoxItem Content="1 продвинутая и 3 базовые"/>
+            <ListBoxItem Content="2 продвинутые и 2 базовые"/>
+            <ListBoxItem Content="2 продвинутые и 3 базовые"/>
+            <ListBoxItem Content="1 элитная, 1 продвинутая и 3 базовые"/>
+        </ComboBox>
+        <ComboBox x:Name="salary" Grid.Column="1" HorizontalAlignment="Center" Margin="0,8,0,0" Grid.Row="8" VerticalAlignment="Top" Width="242" FontSize="15" SelectionChanged="salary_SelectionChanged">
+            <ListBoxItem Content="Младший специалист"/>
+            <ListBoxItem Content="Специалист"/>
+            <ListBoxItem Content="Старший специалист"/>
+            <ListBoxItem Content="Главный специалист"/>
+            <ListBoxItem Content="Ведущий специалист"/>
+        </ComboBox>
+        <TextBlock x:Name="rangeSalaryText" Grid.Column="2" HorizontalAlignment="Left" Margin="156,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock x:Name="theorySalaryText" Grid.Column="2" HorizontalAlignment="Left" Margin="156,15,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="classSalaryText" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" FontSize="18" Margin="156,0,0,0"/>
+        <TextBlock x:Name="stageSalaryText" Grid.Column="2" HorizontalAlignment="Left" Margin="156,0,0,0" Grid.Row="3" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock x:Name="scienceRateSalaryText" Grid.Column="2" HorizontalAlignment="Left" Margin="156,0,0,0" Grid.Row="4" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock x:Name="scienceRankSalaryText" Grid.Column="2" HorizontalAlignment="Left" Margin="156,10,0,0" Grid.Row="5" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="positionSalaryText" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="6" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" FontSize="18" Margin="156,0,0,0"/>
+        <TextBlock x:Name="specializationSalaryText" Grid.Column="2" HorizontalAlignment="Left" Margin="156,0,0,0" Grid.Row="7" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock x:Name="salaryRankText" Grid.Column="2" HorizontalAlignment="Left" Margin="55,10,0,0" Grid.Row="8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="totalSalaryText" Grid.Column="2" HorizontalAlignment="Left" Margin="260,0,0,0" Grid.Row="8" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" FontSize="18"/>
+
+
+    </Grid>
+</Window>
